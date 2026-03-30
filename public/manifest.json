@@ -1,0 +1,33 @@
+{
+  "name": "Invoice Generator Pro",
+  "short_name": "InvoicePro",
+  "description": "Create professional invoices & quotations, collect payments via Mobile Money & Card, and withdraw instantly.",
+  "start_url": "/dashboard",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "finance", "productivity"],
+  "shortcuts": [
+    {
+      "name": "New Invoice",
+      "short_name": "New",
+      "url": "/dashboard/invoices/new",
+      "description": "Create a new invoice"
+    },
+    {
+      "name": "Wallet",
+      "url": "/dashboard/wallet",
+      "description": "View wallet balance"
+    }
+  ]
+}
