@@ -49,7 +49,7 @@ export default function AuthModal({ trigger }: AuthModalProps) {
 
             <div className="text-center space-y-3">
               <h1 className="text-3xl font-bold bg-gradient-to-r from-slate-800 via-slate-700 to-blue-600 bg-clip-text text-transparent">
-                Welcome to Invoice Pro
+                Welcome to Softinvoice Pro
               </h1>
               <p className="text-slate-600 text-sm max-w-sm mx-auto leading-relaxed">
                 Sign in to access your professional invoice generator and manage
@@ -74,7 +74,7 @@ export default function AuthModal({ trigger }: AuthModalProps) {
                   </Link>
                 </div>
                 <div className="text-xs text-slate-500">
-                  Join thousands of professionals using Invoice Pro
+                  Join thousands of professionals using Softinvoice Pro
                 </div>
               </div>
             </div>

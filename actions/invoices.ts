@@ -44,7 +44,7 @@ export async function getInvoiceDashboardData(): Promise<InvoiceDashboardData> {
     const endOfYear = new Date(currentYear, 11, 31, 23, 59, 59); // December 31st
 
     // Fetch all invoices for the current year with client data
-    const invoices = await db.invoice.findMany({
+    const invoices = await db.invoice?.findMany({
       where: {
         userId,
         invoiceDate: {
@@ -82,7 +82,7 @@ export async function getInvoiceDashboardData(): Promise<InvoiceDashboardData> {
 
     // Calculate remaining days and format invoice list
     const today = new Date();
-    const invoiceList: InvoiceListItem[] = invoices.map((invoice) => {
+    const invoiceList: InvoiceListItem[] = invoices?.map((invoice) => {
       const dueDate = new Date(invoice.dueDate);
       const timeDiff = dueDate.getTime() - today.getTime();
       const remainingDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
@@ -143,7 +143,7 @@ export async function getMonthlyRevenueData(): Promise<Array<{
     const currentYear = new Date().getFullYear();
 
     // Get invoices grouped by month
-    const monthlyData = await db.invoice.groupBy({
+    const monthlyData = await db.invoice?.groupBy({
       by: ["invoiceDate"],
       where: {
         userId,
@@ -190,7 +190,7 @@ export async function getMonthlyRevenueData(): Promise<Array<{
 
         const revenue = monthInvoices.reduce(
           (sum, inv) => sum + Number(inv.totalAmount),
-          0
+          0,
         );
         const paid = monthInvoices
           .filter((inv) => inv.status === InvoiceStatus.PAID)
@@ -203,7 +203,7 @@ export async function getMonthlyRevenueData(): Promise<Array<{
           paid,
           unpaid,
         };
-      })
+      }),
     );
 
     return monthlyRevenue;
@@ -231,7 +231,7 @@ export async function getRecentInvoiceActivity(): Promise<Array<{
     const userId = user.id;
 
     // Get recent invoices with activity
-    const recentInvoices = await db.invoice.findMany({
+    const recentInvoices = await db.invoice?.findMany({
       where: {
         userId,
         updatedAt: {
@@ -333,7 +333,7 @@ export async function getInvoiceStatusDistribution(): Promise<Array<{
 
 export async function updateInvoiceStatus(
   invoiceId: string,
-  newStatus: InvoiceStatus
+  newStatus: InvoiceStatus,
 ) {
   try {
     await db.invoice.update({
