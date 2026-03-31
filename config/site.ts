@@ -1,11 +1,11 @@
 export const siteConfig = {
-  name: "Invoice Pro",
+  name: "Softinvoice Pro",
   title:
-    "Invoice Pro | Professional Invoice Generator - Create, Send & Track Invoices",
-  url: "https://invoice-generator-pro-phi.vercel.app",
-  ogImage: "https://invoice-generator-pro-phi.vercel.app/og-image.png", // You'll need to create this image
+    "Softinvoice Pro | Professional Invoice Generator - Create, Send & Track Invoices",
+  url: "https://www.softinvoice.pro",
+  ogImage: "https://www.softinvoice.pro/og-image.png", // You'll need to create this image
   description:
-    "Invoice Pro is a professional invoice generator that helps businesses create, send, and track invoices effortlessly. Generate unlimited professional invoices, manage clients, track payments, and get paid faster with our easy-to-use platform.",
+    "Softinvoice Pro is a professional invoice generator that helps businesses create, send, and track invoices effortlessly. Generate unlimited professional invoices, manage clients, track payments, and get paid faster with our easy-to-use platform.",
   keywords: [
     "invoice generator",
     "professional invoices",
@@ -29,10 +29,10 @@ export const siteConfig = {
     blog: "https://blog.invoicepro.com",
   },
   contact: {
-    support: "support@invoicepro.com",
-    sales: "sales@invoicepro.com",
-    hello: "hello@invoicepro.com",
-    phone: "+1 (555) 123-4567",
+    support: "support@softinvoice.pro",
+    sales: "sales@softinvoice.pro",
+    hello: "hello@softinvoice.pro",
+    phone: "+263 (0) 784488344",
   },
   features: {
     generator: "Professional invoice generation with custom templates",

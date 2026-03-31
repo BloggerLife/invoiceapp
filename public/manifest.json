@@ -1,6 +1,6 @@
 {
-  "name": "Invoice Generator Pro",
-  "short_name": "InvoicePro",
+  "name": "Softinvoice Pro",
+  "short_name": "Softinvoice",
   "description": "Create professional invoices & quotations, collect payments via Mobile Money & Card, and withdraw instantly.",
   "start_url": "/dashboard",
   "display": "standalone",
