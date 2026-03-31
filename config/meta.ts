@@ -7,19 +7,19 @@ export const siteConfig = {
   // Contact Information
   contact: {
     phone: {
-      primary: "+256(0) 762063160",
-      emergency: "+256(0) 756384580",
-      whatsapp: "+256(0) 762063160",
+      primary: "+263(0) 784488344",
+      emergency: "+263(0) 784488344",
+      whatsapp: "+263(0) 784488344",
     },
     email: {
-      primary: "jb@desishub.com",
-      support: "info@desishub.com",
-      appointments: "jb@desishub.com",
+      primary: "macarnoldnenyasha@gmail.com",
+      support: "info@softinvoice.pro",
+      appointments: "zain@softinvoice.pro",
     },
     address: {
-      street: "P.O.Box 430337",
-      city: "Kasese",
-      country: "Uganda",
+      street: "33 Samuriwo",
+      city: "Harare",
+      country: "Zimbabwe",
       coordinates: {
         latitude: "0.11111",
         longitude: "30.11111",

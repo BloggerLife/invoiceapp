@@ -38,7 +38,7 @@ export const pricingOptions: Record<PricingTier, PricingOption> = {
     id: "monthly",
     name: "Starter",
     price: 0,
-    priceUGX: 35000,
+    priceUGX: 15,
     interval: "month",
     description: "For growing businesses",
     dailyInvoices: "5",
@@ -59,8 +59,8 @@ export const pricingOptions: Record<PricingTier, PricingOption> = {
     id: "yearly",
     name: "Pro",
     price: 0,
-    priceUGX: 75000,
-    interval: "month",
+    priceUGX: 65,
+    interval: "year",
     description: "For power users & agencies",
     dailyInvoices: "Unlimited",
     popular: true,
@@ -185,8 +185,8 @@ export const useSubscriptionStore = create<SubscriptionState>()(
         invoiceCount: state.invoiceCount,
         maxInvoices: state.maxInvoices,
       }),
-    }
-  )
+    },
+  ),
 );
 
 export const useSubscription = () => {

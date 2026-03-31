@@ -93,8 +93,8 @@ export const metadata: Metadata = {
   ],
   authors: [
     {
-      name: "JB web developer",
-      url: "https://jb.desishub.com",
+      name: "Maczain",
+      url: "https://maczain.com",
     },
   ],
   alternates: {
@@ -103,7 +103,7 @@ export const metadata: Metadata = {
       "en-US": "/en-US",
     },
   },
-  creator: "Desishub",
+  creator: "Maczain",
   openGraph: {
     type: "website",
     locale: "en_US",

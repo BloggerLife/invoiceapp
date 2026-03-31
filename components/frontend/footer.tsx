@@ -14,22 +14,22 @@ export default function Footer() {
     { label: "Showcase", href: "/showcase" },
     { label: "Agency Site", href: "/agency" },
     // { label: "Blog", href: "/blog" },
-    { label: "Support", href: "https://wa.me/message/5USU26346OWRF1" },
+    { label: "Support", href: "https://wa.me/263784488344" },
   ];
 
   const serviceItems = [
     { label: "Next.js Starter Kit", href: "/" },
     {
       label: "Need Custom Development",
-      href: "https://wa.me/message/5USU26346OWRF1",
+      href: "https://wa.me/263784488344",
     },
     {
       label: "Need Deployment Support",
-      href: "https://wa.me/message/5USU26346OWRF1",
+      href: "https://wa.me/263784488344",
     },
     {
       label: "Need UI Customization",
-      href: "https://wa.me/message/5USU26346OWRF1",
+      href: "https://wa.me/263784488344",
     },
   ];
   const router = useRouter();

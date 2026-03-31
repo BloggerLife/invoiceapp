@@ -39,14 +39,24 @@ const PricingPage: React.FC = () => {
 
   const features = [
     { name: "Invoices per day", free: "1", monthly: "5", yearly: "Unlimited" },
-    { name: "Invoice & Quotation types", free: true, monthly: true, yearly: true },
+    {
+      name: "Invoice & Quotation types",
+      free: true,
+      monthly: true,
+      yearly: true,
+    },
     { name: "PDF download & print", free: true, monthly: true, yearly: true },
     { name: "Email sending", free: true, monthly: true, yearly: true },
     { name: "Custom branding", free: true, monthly: true, yearly: true },
     { name: "Client management", free: true, monthly: true, yearly: true },
     { name: "Payment collection", free: false, monthly: true, yearly: true },
     { name: "Multi-currency wallet", free: false, monthly: true, yearly: true },
-    { name: "Mobile money withdrawals", free: false, monthly: true, yearly: true },
+    {
+      name: "Mobile money withdrawals",
+      free: false,
+      monthly: true,
+      yearly: true,
+    },
     { name: "Priority support", free: false, monthly: true, yearly: true },
   ];
 
@@ -74,9 +84,7 @@ const PricingPage: React.FC = () => {
               <div
                 key={key}
                 className={`relative rounded-2xl border-2 p-6 bg-white transition-all hover:shadow-lg ${
-                  isPopular
-                    ? "border-indigo-500 shadow-md"
-                    : "border-slate-200"
+                  isPopular ? "border-indigo-500 shadow-md" : "border-slate-200"
                 }`}
               >
                 {badge && (
@@ -106,7 +114,7 @@ const PricingPage: React.FC = () => {
                   {plan.priceUGX > 0 ? (
                     <div>
                       <span className="text-3xl font-bold text-slate-900">
-                        UGX {plan.priceUGX.toLocaleString()}
+                        USD {plan.priceUGX.toLocaleString()}
                       </span>
                       <span className="text-slate-500">/month</span>
                     </div>
@@ -120,7 +128,9 @@ const PricingPage: React.FC = () => {
                   )}
                 </div>
 
-                <p className="text-sm text-slate-500 mb-4">{plan.description}</p>
+                <p className="text-sm text-slate-500 mb-4">
+                  {plan.description}
+                </p>
 
                 <div className="bg-blue-50 text-blue-700 text-sm font-medium px-3 py-1.5 rounded-lg inline-block mb-5">
                   {plan.dailyInvoices === "Unlimited"
@@ -214,7 +224,7 @@ const PricingPage: React.FC = () => {
         {/* Benefits */}
         <div className="mb-16">
           <h2 className="text-2xl font-bold text-slate-900 text-center mb-8">
-            Why Invoice Generator Pro?
+            Why Softinvoice Pro?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
@@ -246,9 +256,7 @@ const PricingPage: React.FC = () => {
                 <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mx-auto mb-3">
                   <b.icon className="w-6 h-6 text-blue-600" />
                 </div>
-                <h3 className="font-semibold text-slate-900 mb-1">
-                  {b.title}
-                </h3>
+                <h3 className="font-semibold text-slate-900 mb-1">{b.title}</h3>
                 <p className="text-sm text-slate-500">{b.description}</p>
               </div>
             ))}

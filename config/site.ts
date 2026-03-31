@@ -108,19 +108,19 @@ export const siteConfig = {
     vercel: "Fast, reliable hosting",
   },
   seo: {
-    defaultTitle: "Invoice Pro - Professional Invoice Generator",
-    titleTemplate: "%s | Invoice Pro",
+    defaultTitle: "Softinvoice Pro - Professional Invoice Generator",
+    titleTemplate: "%s | Softinvoice Pro",
     defaultDescription:
-      "Create professional invoices in seconds. Manage clients, track payments, and get paid faster with Invoice Pro.",
-    siteUrl: "https://invoice-generator-pro-phi.vercel.app",
+      "Create professional invoices in seconds. Manage clients, track payments, and get paid faster with Softinvoice.",
+    siteUrl: "https://www.softinvoice.pro",
     openGraph: {
       type: "website",
       locale: "en_US",
-      siteName: "Invoice Pro",
+      siteName: "Softinvoice",
     },
     twitter: {
-      handle: "@invoicepro",
-      site: "@invoicepro",
+      handle: "@softinvoice",
+      site: "@softinvoice",
       cardType: "summary_large_image",
     },
   },

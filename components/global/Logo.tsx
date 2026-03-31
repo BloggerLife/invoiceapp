@@ -27,7 +27,7 @@ export default function Logo({
       className={cn(
         "flex items-center gap-3 transition-all hover:opacity-80",
         isCollapsed ? "justify-center" : "",
-        className
+        className,
       )}
     >
       {/* Logo Mark - Professional invoice icon with "I" */}
@@ -36,7 +36,7 @@ export default function Logo({
           className={cn(
             "rounded-lg flex items-center justify-center shadow-lg",
             `bg-gradient-to-br ${gradientFrom} ${gradientTo}`,
-            isCollapsed ? "h-10 w-10" : "h-10 w-10"
+            isCollapsed ? "h-10 w-10" : "h-10 w-10",
           )}
           initial={false}
           animate={
@@ -97,19 +97,17 @@ export default function Logo({
           transition={{ duration: 0.2 }}
         >
           <div className="flex items-baseline">
-            <span className={cn("text-lg font-bold", primaryColor)}>
-              INVOICE
+            <span className={cn("text-2xl font-bold", accentColor)}>Soft</span>
+            <span className={cn("text-2xl font-bold", primaryColor)}>
+              invoice
             </span>
-            <span className={cn("text-lg font-bold", accentColor)}>PRO</span>
           </div>
           <span
             className={cn(
               "text-xs tracking-wider uppercase -mt-1 font-medium",
-              variant === "light" ? "text-slate-500" : "text-slate-400"
+              variant === "light" ? "text-slate-500" : "text-slate-400",
             )}
-          >
-            GENERATOR
-          </span>
+          ></span>
         </motion.div>
       )}
     </Link>

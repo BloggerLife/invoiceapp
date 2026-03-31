@@ -29,12 +29,12 @@ const FooterBanner = () => {
           />
           <span className="text-sm md:text-base">by</span>
           <Link
-            href="https://wa.me/message/5USU26346OWRF1"
+            href="https://wa.me/263784488344"
             className="text-sm md:text-base text-blue-400 hover:text-blue-300 transition-colors duration-200 underline"
             target="_blank"
             rel="noopener noreferrer"
           >
-            JB
+            Maczain
           </Link>
         </div>
       </div>

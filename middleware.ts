@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 const allowedOrigins = [
   "https://newsletter-hub-teal.vercel.app",
+  "https://www.softinvoice.pro",
   "http://localhost:3001",
   "http://localhost:3000",
 ];

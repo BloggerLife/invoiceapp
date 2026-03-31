@@ -7,7 +7,7 @@ const FloatingSocials = () => {
     {
       name: "WhatsApp",
       icon: BsWhatsapp,
-      href: "https://wa.me/256707234317",
+      href: "https://wa.me/263784488344",
       color: "bg-green-500 hover:bg-green-600",
       glowColor: "shadow-green-500/50",
     },
