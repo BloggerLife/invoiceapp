@@ -40,7 +40,7 @@ export default async function AuthPage({
               {/* Header */}
               <div className="text-center space-y-2">
                 <h1 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-slate-800 via-slate-700 to-blue-600 bg-clip-text text-transparent">
-                  Welcome to Invoice Pro
+                  Welcome to Softinvoice Pro
                 </h1>
                 <p className="text-slate-500 text-xs sm:text-sm max-w-xs mx-auto leading-relaxed">
                   Sign in to create professional invoices, collect payments, and
