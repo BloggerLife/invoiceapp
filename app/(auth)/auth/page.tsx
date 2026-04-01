@@ -57,12 +57,15 @@ export default async function AuthPage({
               <div className="pt-4 border-t border-slate-100 w-full">
                 <p className="text-center text-xs text-slate-500">
                   Need help?{" "}
-                  <Link
+                  <span className="font-medium text-blue-600 hover:text-blue-700">
+                    Contact support
+                  </span>
+                  {/* <Link
                     href="/contact"
                     className="font-medium text-blue-600 hover:text-blue-700"
                   >
                     Contact support
-                  </Link>
+                  </Link> */}
                 </p>
               </div>
             </div>

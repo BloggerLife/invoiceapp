@@ -19,24 +19,24 @@ export const authOptions: NextAuthOptions = {
     signIn: "/auth",
   },
   providers: [
-    GitHubProvider({
-      clientId: process.env.GITHUB_CLIENT_ID || "",
-      clientSecret: process.env.GITHUB_SECRET || "",
-      profile(profile) {
-        const nameParts = (profile.name || profile.login || "").split(" ");
-        return {
-          id: profile.id.toString(),
-          name: profile.name || profile.login,
-          firstName: nameParts[0] || "GitHub", // Fallback
-          lastName: nameParts[1] || "User", // Fallback
-          phone: `github_${profile.id}`, // Generate unique identifier
-          image: profile.avatar_url,
-          email: profile.email,
-          role: "USER",
-          invoiceCount: 0,
-        };
-      },
-    }),
+    // GitHubProvider({
+    //   clientId: process.env.GITHUB_CLIENT_ID || "",
+    //   clientSecret: process.env.GITHUB_SECRET || "",
+    //   profile(profile) {
+    //     const nameParts = (profile.name || profile.login || "").split(" ");
+    //     return {
+    //       id: profile.id.toString(),
+    //       name: profile.name || profile.login,
+    //       firstName: nameParts[0] || "GitHub", // Fallback
+    //       lastName: nameParts[1] || "User", // Fallback
+    //       phone: `github_${profile.id}`, // Generate unique identifier
+    //       image: profile.avatar_url,
+    //       email: profile.email,
+    //       role: "USER",
+    //       invoiceCount: 0,
+    //     };
+    //   },
+    // }),
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID || "",
       clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
@@ -78,7 +78,7 @@ export const authOptions: NextAuthOptions = {
           if (
             existingUser &&
             !existingUser.accounts.some(
-              (acc) => acc.provider === account.provider
+              (acc) => acc.provider === account.provider,
             )
           ) {
             // Link this account to the existing user
@@ -160,7 +160,7 @@ export const authOptions: NextAuthOptions = {
         } else {
           console.error(
             "User not found in database:",
-            user?.email || token.email
+            user?.email || token.email,
           );
         }
       }
