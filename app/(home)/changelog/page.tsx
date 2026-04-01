@@ -32,7 +32,7 @@ const changelog: ChangelogEntry[] = [
     date: "March 2026",
     title: "Payment Collection, Wallet & Quotations",
     description:
-      "A major update that turns Invoice Generator Pro into a full payment collection platform. Send invoices, get paid online, and withdraw your earnings.",
+      "A major update that turns Softinvoice Pro into a full payment collection platform. Send invoices, get paid online, and withdraw your earnings.",
     changes: [
       {
         type: "new",
@@ -45,7 +45,7 @@ const changelog: ChangelogEntry[] = [
         type: "new",
         title: "Multi-Currency Wallet",
         description:
-          "Every payment you receive lands in your wallet. Supports multiple currencies (UGX, USD, KES, and more). View your balances and full transaction history from the new Wallet dashboard page.",
+          "Every payment you receive lands in your wallet. Supports multiple currencies (GBP, USD, RD, and more). View your balances and full transaction history from the new Wallet dashboard page.",
         icon: Wallet,
       },
       {
@@ -85,9 +85,9 @@ const changelog: ChangelogEntry[] = [
       },
       {
         type: "improved",
-        title: "Pricing Displays Both USD & UGX",
+        title: "Pricing Displays Both USD & GBP",
         description:
-          "Subscription pricing now shows both USD and UGX amounts so you know exactly what you're paying regardless of payment method.",
+          "Subscription pricing now shows both USD and GBP amounts so you know exactly what you're paying regardless of payment method.",
         icon: CreditCard,
       },
       {
@@ -127,7 +127,7 @@ export default function ChangelogPage() {
             <h1 className="text-3xl font-bold text-gray-900">Changelog</h1>
           </div>
           <p className="text-gray-500 text-lg">
-            New features, improvements, and fixes for Invoice Generator Pro.
+            New features, improvements, and fixes for Softinvoice Pro.
           </p>
         </div>
 
@@ -180,9 +180,7 @@ export default function ChangelogPage() {
 
         {/* CTA */}
         <div className="text-center pt-8 border-t border-gray-200">
-          <p className="text-gray-500 mb-4">
-            Ready to try the new features?
-          </p>
+          <p className="text-gray-500 mb-4">Ready to try the new features?</p>
           <Link
             href="/auth"
             className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-xl transition-colors"

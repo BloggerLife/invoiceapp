@@ -91,8 +91,8 @@ const BillingClient: React.FC<BillingClientProps> = ({
     });
 
   const formatAmount = (amount: number, currency: string) => {
-    if (currency.toUpperCase() === "UGX")
-      return `UGX ${amount.toLocaleString()}`;
+    if (currency.toUpperCase() === "USD")
+      return `USD ${amount.toLocaleString()}`;
     return new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: currency.toUpperCase(),
@@ -140,7 +140,9 @@ const BillingClient: React.FC<BillingClientProps> = ({
 
         {/* Plan Cards */}
         <div>
-          <h2 className="text-xl font-bold text-gray-900 mb-4">Choose Your Plan</h2>
+          <h2 className="text-xl font-bold text-gray-900 mb-4">
+            Choose Your Plan
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {(["free", "monthly", "yearly"] as const).map((key) => {
               const plan = pricingOptions[key];
@@ -182,7 +184,7 @@ const BillingClient: React.FC<BillingClientProps> = ({
                     {plan.priceUGX > 0 ? (
                       <div>
                         <span className="text-2xl font-bold text-gray-900">
-                          UGX {plan.priceUGX.toLocaleString()}
+                          USD {plan.priceUGX.toLocaleString()}
                         </span>
                         <span className="text-gray-500 text-sm">/month</span>
                       </div>
@@ -208,7 +210,10 @@ const BillingClient: React.FC<BillingClientProps> = ({
 
                   <ul className="space-y-2 mb-5">
                     {plan.features.map((f, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-sm text-gray-600"
+                      >
                         <Check className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
                         {f}
                       </li>
@@ -234,9 +239,7 @@ const BillingClient: React.FC<BillingClientProps> = ({
                             : "bg-blue-600 text-white hover:bg-blue-700"
                       }`}
                     >
-                      {isCurrent
-                        ? "Current Plan"
-                        : `Upgrade to ${plan.name}`}
+                      {isCurrent ? "Current Plan" : `Upgrade to ${plan.name}`}
                     </button>
                   )}
                 </div>
@@ -287,26 +290,42 @@ const BillingClient: React.FC<BillingClientProps> = ({
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-gray-200">
-                      <th className="text-left py-3 font-medium text-gray-500">Date</th>
-                      <th className="text-left py-3 font-medium text-gray-500">Plan</th>
-                      <th className="text-left py-3 font-medium text-gray-500">Amount</th>
-                      <th className="text-left py-3 font-medium text-gray-500">Status</th>
+                      <th className="text-left py-3 font-medium text-gray-500">
+                        Date
+                      </th>
+                      <th className="text-left py-3 font-medium text-gray-500">
+                        Plan
+                      </th>
+                      <th className="text-left py-3 font-medium text-gray-500">
+                        Amount
+                      </th>
+                      <th className="text-left py-3 font-medium text-gray-500">
+                        Status
+                      </th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-100">
                     {initialPayments.map((p) => (
                       <tr key={p.id}>
                         <td className="py-3 text-gray-700">
-                          {p.paidAt ? formatDate(p.paidAt) : formatDate(p.createdAt)}
+                          {p.paidAt
+                            ? formatDate(p.paidAt)
+                            : formatDate(p.createdAt)}
                         </td>
                         <td className="py-3 text-gray-700">
-                          {p.plan === "MONTHLY" ? "Starter" : p.plan === "YEARLY" ? "Pro" : "Free"}
+                          {p.plan === "MONTHLY"
+                            ? "Starter"
+                            : p.plan === "YEARLY"
+                              ? "Pro"
+                              : "Free"}
                         </td>
                         <td className="py-3 font-medium text-gray-900">
                           {formatAmount(p.amount, p.currency)}
                         </td>
                         <td className="py-3">
-                          <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${p.status === "SUCCEEDED" ? "bg-green-100 text-green-700" : p.status === "FAILED" ? "bg-red-100 text-red-700" : "bg-gray-100 text-gray-700"}`}>
+                          <span
+                            className={`px-2 py-0.5 rounded-full text-xs font-medium ${p.status === "SUCCEEDED" ? "bg-green-100 text-green-700" : p.status === "FAILED" ? "bg-red-100 text-red-700" : "bg-gray-100 text-gray-700"}`}
+                          >
                             {p.status === "SUCCEEDED" ? "Paid" : p.status}
                           </span>
                         </td>
@@ -319,20 +338,31 @@ const BillingClient: React.FC<BillingClientProps> = ({
               {/* Mobile Card View */}
               <div className="md:hidden space-y-3">
                 {initialPayments.map((p) => (
-                  <div key={p.id} className="border border-gray-200 rounded-lg p-3 flex items-center justify-between">
+                  <div
+                    key={p.id}
+                    className="border border-gray-200 rounded-lg p-3 flex items-center justify-between"
+                  >
                     <div>
                       <div className="text-sm font-medium text-gray-900">
-                        {p.plan === "MONTHLY" ? "Starter" : p.plan === "YEARLY" ? "Pro" : "Free"}
+                        {p.plan === "MONTHLY"
+                          ? "Starter"
+                          : p.plan === "YEARLY"
+                            ? "Pro"
+                            : "Free"}
                       </div>
                       <div className="text-xs text-gray-500">
-                        {p.paidAt ? formatDate(p.paidAt) : formatDate(p.createdAt)}
+                        {p.paidAt
+                          ? formatDate(p.paidAt)
+                          : formatDate(p.createdAt)}
                       </div>
                     </div>
                     <div className="text-right">
                       <div className="text-sm font-semibold text-gray-900">
                         {formatAmount(p.amount, p.currency)}
                       </div>
-                      <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${p.status === "SUCCEEDED" ? "bg-green-100 text-green-700" : p.status === "FAILED" ? "bg-red-100 text-red-700" : "bg-gray-100 text-gray-700"}`}>
+                      <span
+                        className={`px-2 py-0.5 rounded-full text-xs font-medium ${p.status === "SUCCEEDED" ? "bg-green-100 text-green-700" : p.status === "FAILED" ? "bg-red-100 text-red-700" : "bg-gray-100 text-gray-700"}`}
+                      >
                         {p.status === "SUCCEEDED" ? "Paid" : p.status}
                       </span>
                     </div>
@@ -341,9 +371,7 @@ const BillingClient: React.FC<BillingClientProps> = ({
               </div>
             </>
           ) : (
-            <p className="text-center text-gray-400 py-6">
-              No payments yet
-            </p>
+            <p className="text-center text-gray-400 py-6">No payments yet</p>
           )}
         </div>
 

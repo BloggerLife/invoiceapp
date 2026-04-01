@@ -73,27 +73,26 @@ export interface InvoiceData {
 // Updated placeholder data with schema-matching fields
 const initialData: InvoiceData = {
   documentType: "invoice",
-  companyName: "DESISHUB",
-  companyAddress: "DESISHUB",
-  companyPhone: "0762063160 | 0756384580",
-  companyEmail: "info@desishub.com",
+  companyName: "SOFTINVOICE",
+  companyAddress: "SOFTINVOICE",
+  companyPhone: "0784488344 | 0123456789",
+  companyEmail: "info@softinvoice.pro",
   brandColor: "#000000",
-  logoUrl: "https://utfs.io/f/xfyx7VpiVmTbx8SIrtpiVmTbZrh9RFQWYcvt2JxzPpKfwnL1",
+  logoUrl:
+    "https://mog67uf8xi.ufs.sh/f/OC12J65xItl9Ew2Efm4aS0eAWp9ZYToIkh7NRXwb48Jg3uxB",
   contactInfo:
-    "If you have any questions concerning this Invoice, please contact: Call or Whatsapp: 0762 063 160 | 0756 384 580",
-  paymentInfo:
-    "All dues are Payable to Desishub through Cash or MTN MOMO 0762 063 160",
+    "If you have any questions concerning this Invoice, please contact: Call or Whatsapp: +263(0)784488344 ",
+  paymentInfo: "All dues are Payable to Maczain through Cash or EcoCash",
   thankYouMessage: "Thank you for your business!",
-
-  billToContactPerson: "Mary Awalith",
-  billToCompanyName: "CODELABS CO. LTD",
-  billToLocation: "South Sudan",
-  billToPhone: "922031601",
+  billToContactPerson: "John Doe",
+  billToCompanyName: "JOHNDOE CO. LTD",
+  billToLocation: "Zimbabwe",
+  billToPhone: "0123456789",
   customerID: "CODM-742",
 
   invoiceDate: "2025-05-22",
   invoiceNumber: "INV-69062-1875",
-  preparedBy: "JB",
+  preparedBy: "MC",
   invoiceDueDate: "2025-05-22",
 
   items: [
@@ -136,11 +135,15 @@ const InvoicePreview: React.FC<{
               className="h-16"
             />
           ) : (
-            <div className="text-xl md:text-4xl font-bold">{invoiceData.companyName}</div>
+            <div className="text-xl md:text-4xl font-bold">
+              {invoiceData.companyName}
+            </div>
           )}
           {/* <div className="text-sm">Leveraging Technology</div> */}
         </div>
-        <div className="text-2xl md:text-5xl font-bold text-right">{invoiceData.documentType === "quotation" ? "QUOTATION" : "INVOICE"}</div>
+        <div className="text-2xl md:text-5xl font-bold text-right">
+          {invoiceData.documentType === "quotation" ? "QUOTATION" : "INVOICE"}
+        </div>
       </div>
 
       {/* Company & Invoice Details */}
@@ -149,9 +152,15 @@ const InvoicePreview: React.FC<{
           <h3 className="text-sm md:text-lg font-semibold mb-2 text-gray-700">
             Company Address
           </h3>
-          <p className="text-gray-600 text-xs md:text-base">{invoiceData.companyName}</p>
-          <p className="text-gray-600 text-xs md:text-base">Phone: {invoiceData.companyPhone}</p>
-          <p className="text-gray-600 text-xs md:text-base">Email: {invoiceData.companyEmail}</p>
+          <p className="text-gray-600 text-xs md:text-base">
+            {invoiceData.companyName}
+          </p>
+          <p className="text-gray-600 text-xs md:text-base">
+            Phone: {invoiceData.companyPhone}
+          </p>
+          <p className="text-gray-600 text-xs md:text-base">
+            Email: {invoiceData.companyEmail}
+          </p>
         </div>
         <div className="text-right">
           <p>
@@ -159,7 +168,11 @@ const InvoicePreview: React.FC<{
             <span className="text-gray-600">{invoiceData.invoiceDate}</span>
           </p>
           <p>
-            <span className="font-semibold text-gray-700">{invoiceData.documentType === "quotation" ? "Quotation #:" : "Invoice #:"}</span>{" "}
+            <span className="font-semibold text-gray-700">
+              {invoiceData.documentType === "quotation"
+                ? "Quotation #:"
+                : "Invoice #:"}
+            </span>{" "}
             <span className="text-gray-600">{invoiceData.invoiceNumber}</span>
           </p>
           <p>
@@ -172,7 +185,9 @@ const InvoicePreview: React.FC<{
       {/* Bill To & Prepared By */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mb-4 md:mb-8 px-4 md:px-8">
         <div>
-          <h3 className="text-sm md:text-lg font-semibold mb-2 text-gray-700">Bill To</h3>
+          <h3 className="text-sm md:text-lg font-semibold mb-2 text-gray-700">
+            Bill To
+          </h3>
           <p className="text-gray-600 text-xs md:text-base">
             Contact Person: {invoiceData.billToContactPerson}
           </p>
@@ -182,7 +197,9 @@ const InvoicePreview: React.FC<{
           <p className="text-gray-600 text-xs md:text-base">
             Location: {invoiceData.billToLocation}
           </p>
-          <p className="text-gray-600 text-xs md:text-base">Phone: {invoiceData.billToPhone}</p>
+          <p className="text-gray-600 text-xs md:text-base">
+            Phone: {invoiceData.billToPhone}
+          </p>
         </div>
         <div className="text-right">
           <p>
@@ -195,7 +212,11 @@ const InvoicePreview: React.FC<{
       {/* Invoice Due Date */}
       <div className="mb-4 md:mb-8 px-4 md:px-8">
         <p>
-          <span className="font-semibold text-gray-700">{invoiceData.documentType === "quotation" ? "Quotation Due Date:" : "Invoice Due Date:"}</span>{" "}
+          <span className="font-semibold text-gray-700">
+            {invoiceData.documentType === "quotation"
+              ? "Quotation Due Date:"
+              : "Invoice Due Date:"}
+          </span>{" "}
           <span className="text-gray-600">{invoiceData.invoiceDueDate}</span>
         </p>
       </div>
@@ -384,7 +405,7 @@ const InvoiceForm: React.FC<{
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
     const { name, value, type } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -392,7 +413,7 @@ const InvoiceForm: React.FC<{
 
   const handleItemChange = (
     index: number,
-    e: React.ChangeEvent<HTMLInputElement>
+    e: React.ChangeEvent<HTMLInputElement>,
   ) => {
     const { name, value, type } = e.target;
     const updatedItems = [...formData.items];
@@ -499,7 +520,9 @@ const InvoiceForm: React.FC<{
   return (
     <form onSubmit={handleSubmit} className="p-4 md:p-8 space-y-4 md:space-y-6">
       <div className="flex items-center justify-between gap-2">
-        <h2 className="text-lg md:text-2xl font-semibold">New {formData.documentType === "quotation" ? "Quotation" : "Invoice"}</h2>
+        <h2 className="text-lg md:text-2xl font-semibold">
+          New {formData.documentType === "quotation" ? "Quotation" : "Invoice"}
+        </h2>
         <Link
           className={buttonVariants({
             variant: "outline",
@@ -513,7 +536,9 @@ const InvoiceForm: React.FC<{
       </div>
       {/* Company Info Section */}
       <fieldset className="border p-3 md:p-4 rounded">
-        <legend className="text-sm md:text-lg font-medium px-2">Company Info</legend>
+        <legend className="text-sm md:text-lg font-medium px-2">
+          Company Info
+        </legend>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label
@@ -671,7 +696,9 @@ const InvoiceForm: React.FC<{
 
       {/* Invoice Details Section */}
       <fieldset className="border p-3 md:p-4 rounded">
-        <legend className="text-sm md:text-lg font-medium px-2">Document Details</legend>
+        <legend className="text-sm md:text-lg font-medium px-2">
+          Document Details
+        </legend>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
             <label
@@ -696,7 +723,9 @@ const InvoiceForm: React.FC<{
               htmlFor="invoiceNumber"
               className="block text-sm font-medium text-gray-700"
             >
-              {formData.documentType === "quotation" ? "Quotation #" : "Invoice #"}
+              {formData.documentType === "quotation"
+                ? "Quotation #"
+                : "Invoice #"}
               <button
                 type="button"
                 onClick={handleGenerateInvoiceNumber}
@@ -782,7 +811,10 @@ const InvoiceForm: React.FC<{
           </button>
         </legend>
         {formData.items.map((item, index) => (
-          <div key={index} className="grid grid-cols-2 md:grid-cols-6 gap-2 mb-3 md:mb-2 items-center">
+          <div
+            key={index}
+            className="grid grid-cols-2 md:grid-cols-6 gap-2 mb-3 md:mb-2 items-center"
+          >
             <input
               type="number"
               name="quantity"
@@ -964,7 +996,9 @@ const InvoiceForm: React.FC<{
 
       {/* Footer Info Section */}
       <fieldset className="border p-3 md:p-4 rounded">
-        <legend className="text-sm md:text-lg font-medium px-2">Footer Info</legend>
+        <legend className="text-sm md:text-lg font-medium px-2">
+          Footer Info
+        </legend>
         <div className="space-y-4">
           <div>
             <label
@@ -1191,11 +1225,11 @@ const styles = StyleSheet.create({
   thankYou: { fontSize: 12, fontWeight: "bold", marginTop: 10 },
 });
 
-const InvoicePDF: React.FC<{ invoiceData: InvoiceData; currency: string; logoBase64?: string | null }> = ({
-  invoiceData,
-  currency,
-  logoBase64,
-}) => (
+const InvoicePDF: React.FC<{
+  invoiceData: InvoiceData;
+  currency: string;
+  logoBase64?: string | null;
+}> = ({ invoiceData, currency, logoBase64 }) => (
   <Document>
     <Page size="A4" style={styles.page}>
       {/* Header */}
@@ -1211,8 +1245,11 @@ const InvoicePDF: React.FC<{ invoiceData: InvoiceData; currency: string; logoBas
         }}
       >
         <View style={styles.logoContainer}>
-          {(logoBase64 || invoiceData.logoUrl) ? (
-            <Image style={styles.logo} src={logoBase64 || invoiceData.logoUrl} />
+          {logoBase64 || invoiceData.logoUrl ? (
+            <Image
+              style={styles.logo}
+              src={logoBase64 || invoiceData.logoUrl}
+            />
           ) : (
             <View>
               <Text style={styles.headerText}>{invoiceData.companyName}</Text>
@@ -1220,7 +1257,9 @@ const InvoicePDF: React.FC<{ invoiceData: InvoiceData; currency: string; logoBas
             </View>
           )}
         </View>
-        <Text style={styles.invoiceTitle}>{invoiceData.documentType === "quotation" ? "QUOTATION" : "INVOICE"}</Text>
+        <Text style={styles.invoiceTitle}>
+          {invoiceData.documentType === "quotation" ? "QUOTATION" : "INVOICE"}
+        </Text>
       </View>
 
       {/* Company & Invoice Details */}
@@ -1234,7 +1273,10 @@ const InvoicePDF: React.FC<{ invoiceData: InvoiceData; currency: string; logoBas
         <View style={[styles.col, styles.textRight]}>
           <Text style={styles.text}>Date: {invoiceData.invoiceDate}</Text>
           <Text style={styles.text}>
-            {invoiceData.documentType === "quotation" ? "Quotation #:" : "Invoice #:"} {invoiceData.invoiceNumber}
+            {invoiceData.documentType === "quotation"
+              ? "Quotation #:"
+              : "Invoice #:"}{" "}
+            {invoiceData.invoiceNumber}
           </Text>
           <Text style={styles.text}>Customer ID: {invoiceData.customerID}</Text>
         </View>
@@ -1263,7 +1305,10 @@ const InvoicePDF: React.FC<{ invoiceData: InvoiceData; currency: string; logoBas
       {/* Invoice Due Date */}
       <View style={styles.section}>
         <Text style={styles.text}>
-          {invoiceData.documentType === "quotation" ? "Quotation Due Date:" : "Invoice Due Date:"} {invoiceData.invoiceDueDate}
+          {invoiceData.documentType === "quotation"
+            ? "Quotation Due Date:"
+            : "Invoice Due Date:"}{" "}
+          {invoiceData.invoiceDueDate}
         </Text>
       </View>
 
@@ -1434,29 +1479,30 @@ export default function UserInvoiceForm({
 
   const defaultInvoiceData = {
     ...initialInvoiceData,
-    documentType: initialInvoiceData.documentType || "invoice" as DocumentType,
+    documentType:
+      initialInvoiceData.documentType || ("invoice" as DocumentType),
     invoiceDate: invoiceDate,
     invoiceDueDate: invoiceDueDate,
     preparedBy: preparedBy || "JB",
-    billToContactPerson: lastClient?.billToContactPerson || "Mary Kuper",
-    billToCompanyName: lastClient?.billToCompanyName || "CODELABS CO. LTD",
-    billToLocation: lastClient?.billToLocation || "South Sudan",
-    billToPhone: lastClient?.billToPhone || "922031601",
+    billToContactPerson: lastClient?.billToContactPerson || "John Doe",
+    billToCompanyName: lastClient?.billToCompanyName || "JOHNDOE CO. LTD",
+    billToLocation: lastClient?.billToLocation || "Zimbabwe",
+    billToPhone: lastClient?.billToPhone || "0123456789",
     customerID: lastClient?.customerID || "CODM-742",
-    companyName: currentBrand?.name || "DESISHUB",
-    companyAddress: currentBrand?.address || "Kampala",
-    companyPhone: currentBrand?.phone || "0762063160 | 0756384580",
+    companyName: currentBrand?.name || "MACZAIN",
+    companyAddress: currentBrand?.address || "Harare",
+    companyPhone: currentBrand?.phone || "0784488344 | 0784488344",
     brandColor: currentBrand?.brandColor || "#000000",
-    companyEmail: currentBrand?.email || "info@desishub.com",
+    companyEmail: currentBrand?.email || "info@maczain.com",
     logoUrl:
       currentBrand?.logo ||
-      "https://utfs.io/f/xfyx7VpiVmTbx8SIrtpiVmTbZrh9RFQWYcvt2JxzPpKfwnL1",
+      "https://mog67uf8xi.ufs.sh/f/OC12J65xItl9Ew2Efm4aS0eAWp9ZYToIkh7NRXwb48Jg3uxB",
     contactInfo:
       currentBrand?.contactInfo ||
       "If you have any questions concerning this Invoice, please contact: Call or Whatsapp: 0762 063 160 | 0756 384 580",
     paymentInfo:
       currentBrand?.paymentInfo ||
-      "All dues are Payable to Desishub through Cash or MTN MOMO 0762 063 160",
+      "All dues are Payable to Maczain through Cash or EcoCash ",
     thankYouMessage:
       currentBrand?.thankYouMsg || "Thank you for your business!",
     taxRate: currentBrand?.taxRate || 10,
@@ -1464,7 +1510,7 @@ export default function UserInvoiceForm({
     other: currentBrand?.otherCharges || 4,
   };
   const [invoiceData, setInvoiceData] = useState<InvoiceData>(
-    editingId ? initialInvoiceData : defaultInvoiceData
+    editingId ? initialInvoiceData : defaultInvoiceData,
   );
   console.log(initialInvoiceData);
   const [showMailPopup, setShowMailPopup] = useState(false);
@@ -1501,7 +1547,13 @@ export default function UserInvoiceForm({
   // Download Handler
   const PdfLinkComponent = (
     <PDFDownloadLink
-      document={<InvoicePDF currency={currency} invoiceData={invoiceData} logoBase64={logoBase64} />}
+      document={
+        <InvoicePDF
+          currency={currency}
+          invoiceData={invoiceData}
+          logoBase64={logoBase64}
+        />
+      }
       fileName={`${invoiceData.documentType === "quotation" ? "Quotation" : "Invoice"}-${invoiceData.invoiceNumber}.pdf`}
       className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition duration-200 no-underline"
     >

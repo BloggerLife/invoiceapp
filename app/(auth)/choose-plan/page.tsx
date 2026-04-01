@@ -79,7 +79,7 @@ export default function ChoosePlanPage() {
                 <div className="mb-2">
                   {plan.priceUGX > 0 ? (
                     <span className="text-2xl font-bold text-slate-900">
-                      UGX {plan.priceUGX.toLocaleString()}
+                      USD {plan.priceUGX.toLocaleString()}
                       <span className="text-sm font-normal text-slate-500">
                         /mo
                       </span>
